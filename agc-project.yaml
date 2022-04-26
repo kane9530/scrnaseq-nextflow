@@ -9,7 +9,6 @@ workflows:
     sourceURL: workflows/scrnaseq
 data:
   - location: s3://nextflow-gedac-test
-    readOnly: true
 contexts:
   bigMemCtx:
     instanceTypes:                     # Standard types plus r5.8xlarge due to memory requirements of build_index step
