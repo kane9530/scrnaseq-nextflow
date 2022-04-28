@@ -34,11 +34,12 @@ if (params.aligner != 'star' && params.aligner != 'alevin' && params.aligner != 
 include { kb_count } from './modules/kb-python/count'
 include { kb_build_index } from './modules/kb-python/build_index'
 
-params.tech = params.type + params.chemistry
 fastq_input = Channel.fromPath(params.input) | collect
+fasta = Channel.fromPath(params.fasta) | collect
+gtf = Channel.fromPath(params.gtf) | collect
 
 workflow {
-    kb_build_index(params.fasta, params.gtf)
+    kb_build_index(fasta, gtf)
     kb_count(fastq_input, 
              kb_build_index.out.index_file,
              kb_build_index.out.t2g_file)
