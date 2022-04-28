@@ -1,3 +1,5 @@
+params.tech = params.type + params.chemistry
+
 process kb_count {
     label params.aligner
     label "mid_memory"

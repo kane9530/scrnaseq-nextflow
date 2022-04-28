@@ -1,7 +1,7 @@
 process kb_build_index {
     label params.aligner
     label "mid_memory"
-    publishDir params.kb_ref_files, mode: "copy"
+    //publishDir params.kb_ref_files, mode: "copy"
     
     input:
         path fasta 

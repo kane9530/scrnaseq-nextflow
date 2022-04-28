@@ -5,8 +5,8 @@ process kb_download_ref {
     publishDir params.kb_ref_files, mode: "copy"
 
     output:
-	path "index.idx"
-	path "t2g.txt"
+	path "index.idx", emit: index_file
+	path "t2g.txt" , emit: t2g_file
 
     script:
     """
